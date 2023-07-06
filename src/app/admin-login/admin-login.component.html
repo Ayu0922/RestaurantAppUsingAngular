@@ -1,0 +1,71 @@
+
+  <div class="container-fluid loginPage">
+    <div class="row">
+      <!-- <div class="col-md-6">
+        <img src="https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=740&t=st=1681386813~exp=1681387413~hmac=264eb43c19db57aa66e7bebcfc2a11df7d5c3d5d72d0c39bdc17f84b0f931e6f" alt="">
+      </div> -->
+<!--      
+        <div class="col-md-6"> -->
+            <div class="card">
+                <div class="text-center">
+                    <h3>
+                      <span><i class="fa-solid fa-mug-hot"></i></span>  RESTAURANT LOGIN</h3>
+                      
+
+                </div>
+                <form  [formGroup]="loginForm" (ngSubmit)="logIn()">
+                    <div class="mb-3">
+                      <label class="form-label">Username</label>
+                      <input  formControlName="uname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username admin">
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Password</label>
+                      <input formControlName="password" [type]="changetype?'password':'text'" class="form-control" id="exampleInputPassword1" placeholder="Enter Password 1234" >
+                   <span class="eye-icon" (click)="viewpass()"><i [ngClass]="visible?'fa-solid fa-eye' :'fa-solid fa-eye-slash'"></i></span>
+                   
+                  </div>
+                  
+                    <div class="d-grid col-6 mx-auto">
+                    <button type="submit" class="btn btn-primary " matTooltip="Login Now !!!" [disabled]="loginForm.invalid">Login</button>
+                </div> 
+                <!-- <p class="message">Not registered? <a routerLink="/signup">Create an account</a></p>  -->
+                </form>
+            </div>
+        </div>
+    </div>
+  <!-- </div> -->
+  <!-- <div class="container">
+    <mat-card>
+        <mat-card-content>
+    <div>
+        <div>
+           
+            <img src="https://th.bing.com/th/id/OIP.CAOX53k4N3b8hVchoOZAtQHaHx?pid=ImgDet&w=168&h=177&c=7" alt="">
+            <h2>Login Restaurant App</h2>
+        </div>
+                 <div>
+            <mat-form-field appearance="outline" class="form-elements">
+                <mat-label>Restaurant Name</mat-label>
+                <input matInput placeholder="Restaurant Name" [(ngModel)]="uname">
+               </mat-form-field> 
+               </div>
+   
+       <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Restaurant Owner</mat-label>
+        <input matInput placeholder="Password" [type]="changetype?'password':'text'"  [(ngModel)]="password">
+        <span class="eye-icon" (click)="viewpass()"><i [ngClass]="visible?'fa-solid fa-eye' :'fa-solid fa-eye-slash'"></i></span>
+                   
+       </mat-form-field> 
+    </div>
+
+    
+
+    
+
+    <button mat-raised-button color="primary" (click)="logIn()">Login</button>
+</div>
+</mat-card-content>
+</mat-card>
+</div> -->

@@ -1,0 +1,135 @@
+<app-header></app-header>
+
+<h1><i class="fa-solid fa-star fa-bounce"></i> Customer Feedback <i class="fa-solid fa-star fa-bounce"></i></h1>
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.pexels.com/photos/4552130/pexels-photo-4552130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/7471079/pexels-photo-7471079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/5684562/pexels-photo-5684562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="...">
+      </div>
+      <!-- <div class="carousel-item">
+        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq" class="d-block w-100" alt="">
+      </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<nav class="navbar navbar-light justify-content-center">
+ 
+  <div class="container">
+<!--       
+  <form class="d-flex col-md-8">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="searchText">
+    
+  </form> -->
+  
+</div>
+</nav>
+<div class="container-fluid" id="viewOrderRecods">
+  
+    <!-- <table mat-table [dataSource]="allRestaurants|filter:searchText|paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
+     
+      <!-- <table mat-table [dataSource]="viewFeedbackRecords|filter:searchText|paginate:{itemsPerPage:10,currentPage:p} " class="mat-elevation-z8"> -->
+      <table mat-table [dataSource]="viewFeedbackRecords |paginate:{itemsPerPage:10,currentPage:p} " class="mat-elevation-z8">
+       
+        <!-- ID Column 0-->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Sr.No.</th>
+        
+          <td mat-cell *matCellDef="let element "> {{element.id}} </td>
+        </ng-container>
+       
+       
+  
+        <!--Restaurant Name Column 1 -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+         <!-- Restaurant Ordered Menu Column 2 -->
+        <ng-container matColumnDef="menu">
+          <th mat-header-cell *matHeaderCellDef>Ordered Menu </th>
+          <td mat-cell *matCellDef="let element"> {{element.menu}} </td>
+        </ng-container>
+         
+      
+        <!-- Restaurant Mobile Column 4-->
+        <ng-container matColumnDef="mobile">
+          <th mat-header-cell *matHeaderCellDef>Mobile  </th>
+          <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+            <!--Restaurant Location Column 5-->
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef>Location </th>
+            <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="foodqty">
+            <th mat-header-cell *matHeaderCellDef>Food Quality </th>
+            <td mat-cell *matCellDef="let element"> {{element.foodqty}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="service">
+            <th mat-header-cell *matHeaderCellDef>Service</th>
+            <td mat-cell *matCellDef="let element"> {{element.service}} </td>
+          </ng-container>
+          <ng-container matColumnDef="clean">
+            <th mat-header-cell *matHeaderCellDef>Cleanliness</th>
+            <td mat-cell *matCellDef="let element"> {{element.clean}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="speed">
+            <th mat-header-cell *matHeaderCellDef>Speed</th>
+            <td mat-cell *matCellDef="let element"> {{element.speed}}  </td>
+          </ng-container>
+
+          <ng-container matColumnDef="rate">
+            <th mat-header-cell *matHeaderCellDef>Ratings</th>
+            <td mat-cell *matCellDef="let element"> {{element.rate}} <i class="fa-solid fa-star fa-beat"></i></td>
+          </ng-container>
+           
+         
+        <tr mat-header-row *matHeaderRowDef="displayContactRecords"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayContactRecords;"></tr>
+       
+      </table>
+      
+     
+    </div>
+
+    <!--Adding Paginator-->
+<div class="d-flex flex-row-reverse pagenator mt-5 ">
+    <pagination-controls (pageChange)="paginator($event)"></pagination-controls>
+  </div>
+

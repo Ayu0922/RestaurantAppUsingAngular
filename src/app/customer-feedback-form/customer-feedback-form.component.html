@@ -1,0 +1,126 @@
+
+<div class="container-fluid" id="addNewRestaurant">
+  <div class="row">
+    <div class="col-md-6" id="headings" style="padding: 0;">
+      <img src="https://img.freepik.com/free-vector/giving-reviews-concept_52683-63892.jpg?size=626&ext=jpg&uid=R100710089&semt=robertav1_2_sidr" class="d-block w-100" alt="" id="img_head">
+      </div>
+      <div class="col-md-6" id="addOrderForm">
+    <!-- <mat-card>
+        <mat-card-content> -->
+    <div>
+        <div>
+           
+            <!-- <img src="https://imgs.search.brave.com/7wDkb2eDqdyp_ITZEH0_ojPi0mcvS-RzSlAuKzDpIZs/rs:fit:1528:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5J/bUxOVzdyRGZBV1Z0/TTIzWlhUN1ZRSGFD/VCZwaWQ9QXBp" alt=""> -->
+            <h2>Customer Feedback Form</h2>
+        </div>
+   
+                 <!--Customer Name-->
+                 <div>
+                  <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                <mat-label>Customer Name</mat-label>
+                <input matInput placeholder="Restaurant Name" [(ngModel)]="customerFeedback.name" class="form-control" required>
+               </mat-form-field> 
+               </div>
+               <!--Customer Mobile-->
+    <div>
+      <mat-form-field appearance="outline" class="form-elements">
+       <mat-label>Mobile</mat-label>
+       <input matInput placeholder="Contact Number" [(ngModel)]="customerFeedback.mobile" class="form-control" required>
+      </mat-form-field> 
+   </div>
+<!--Customer Email-->
+   <div>
+      <mat-form-field appearance="outline" class="form-elements">
+       <mat-label>Email</mat-label>
+       <input matInput placeholder="Email Address" [(ngModel)]="customerFeedback.email" class="form-control" required>
+      </mat-form-field> 
+   </div>
+<!--Customer Location-->
+    <div>
+      <mat-form-field appearance="outline" class="form-elements">
+       <mat-label>Location</mat-label>
+       <input matInput placeholder="Location" [(ngModel)]="customerFeedback.location" class="form-control" required>
+      </mat-form-field> 
+   </div>
+    <!--Restaurant Menu-->
+    <div>
+      <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+       <mat-label>Ordered Menu</mat-label>
+       <input matInput placeholder="Ordered Menu" [(ngModel)]="customerFeedback.menu" class="form-control" required>
+      </mat-form-field> 
+      </div>
+               
+
+                   <div>
+                   
+                    <mat-label class="mat_lable">Food Quality</mat-label>
+                   
+                      <mat-radio-group aria-label="Select an option" class="radio-btn-group"  [(ngModel)]="customerFeedback.foodqty">
+                        <mat-radio-button value="Excellent">Excellent</mat-radio-button>
+                        <mat-radio-button value="Good">Good</mat-radio-button>
+                        <!-- <mat-radio-button value="Average">Average</mat-radio-button> -->
+                        <mat-radio-button value="Dissatisfied">Dissatisfied</mat-radio-button>
+                      </mat-radio-group>
+                     
+                    </div>
+
+                    <div>
+                      <mat-label class="mat_lable">Service Quality</mat-label>
+                        <mat-radio-group aria-label="Select an option" class="radio-btn-group" [(ngModel)]="customerFeedback.service">
+                          <mat-radio-button value="Excellent">Excellent</mat-radio-button>
+                          <mat-radio-button value="Good">Good</mat-radio-button>
+                          <!-- <mat-radio-button value="Average">Average</mat-radio-button> -->
+                          <mat-radio-button value="Dissatisfied">Dissatisfied</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+
+                      <div>
+                        <mat-label class="mat_lable">Cleanliness</mat-label>
+                          <mat-radio-group aria-label="Select an option" class="radio-btn-group" [(ngModel)]="customerFeedback.clean">
+                            <mat-radio-button value="Excellent">Excellent</mat-radio-button>
+                            <mat-radio-button value="Good">Good</mat-radio-button>
+                            <!-- <mat-radio-button value="Average">Average</mat-radio-button> -->
+                            <mat-radio-button value="Dissatisfied">Dissatisfied</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+
+                        <div>
+                          <mat-label class="mat_lable">Speed Of Service</mat-label>
+                            <mat-radio-group aria-label="Select an option" class="radio-btn-group" [(ngModel)]="customerFeedback.speed">
+                              <mat-radio-button value="Excellent">Excellent</mat-radio-button>
+                              <mat-radio-button value="Good">Good</mat-radio-button>
+                              <!-- <mat-radio-button value="Average">Average</mat-radio-button> -->
+                              <mat-radio-button value="Dissatisfied">Dissatisfied</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+
+                          <div class="rate" >
+                            <mat-label class="mat_lable" id="rate">Overall Ratings</mat-label>
+                            <input type="radio" id="star1" name="rate" value="1" [(ngModel)]="customerFeedback.rate">
+                            <label for="star1" title="text">1 stars</label>
+                        
+                            <input type="radio" id="star2" name="rate" value="2" [(ngModel)]="customerFeedback.rate">
+                            <label for="star2" title="text">2 stars</label>
+                        
+                            <input type="radio" id="star3" name="rate" value="3" [(ngModel)]="customerFeedback.rate">
+                            <label for="star3" title="text">3 stars</label>
+                        
+                            <input type="radio" id="star4" name="rate" value="4" [(ngModel)]="customerFeedback.rate">
+                            <label for="star4" title="text">4 stars</label>
+                        
+                            <input type="radio" id="star5" name="rate" value="5" [(ngModel)]="customerFeedback.rate">
+                            <label for="star5" title="text">5 star</label>
+                          </div>
+  
+
+    <button mat-raised-button color="primary" matTooltip="Add New Restaurant" [(ngModel)]="customerFeedback" (click)=" addFeedback()" id="addFeedback">ADD FEEDBACK</button>
+  &nbsp; <button mat-raised-button color="accent" matTooltip="Go Home" routerLink="/user-dashboard">Home</button>
+</div>
+
+
+<!--Form End-->
+<!-- </mat-card-content>
+</mat-card> -->
+</div>
+</div>
+</div>

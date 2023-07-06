@@ -1,0 +1,46 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@1,700&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&family=Tilt+Prism&display=swap');
+.form-elements{
+    width: 500px;
+}
+.container{
+    padding: 20px;
+    
+    
+}
+h2{
+    color: #0002A1;
+    font-family: 'Lobster', cursive;
+    font-size: 39px;
+    text-align: center;
+    font-weight: 400;
+    padding: 20px;
+    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* img{
+   margin-left: 14em;
+   border-radius: 16em;
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
+button{
+    margin-top: 20px;
+}
+.mat-mdc-card {
+    width: 55%;
+    align-items: center;
+}
+.mat-mdc-card-content:last-child {
+    padding-bottom: 35px;
+}
+#img_head{
+    height: 55.9em;
+  }
+  #addOrderForm{
+    text-align: center;
+    /* background-color: #F9D949; */
+    background-color: #FFFBEB;
+    padding-bottom: 1em;
+    }

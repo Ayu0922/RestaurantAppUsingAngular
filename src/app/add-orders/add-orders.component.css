@@ -1,0 +1,134 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Cookie&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@1,700&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&family=Source+Sans+Pro&family=Tilt+Prism&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Cookie&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@1,700&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&family=Tilt+Prism&family=Yellowtail&display=swap');
+igx-time-picker {
+  width: 400px;
+}
+table {
+    width: 90%;
+   
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+td,tr,th{
+  font-size: 15px;
+}
+.allRestaurant{
+  padding: 10px;
+}
+.container{
+  margin-top: 2em;
+}
+table img{
+  width: 212px;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  padding: 6px;
+}
+table img:hover{
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+ 
+}
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@1,700&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&family=Tilt+Prism&display=swap');
+.form-elements{
+    width: 500px;
+}
+.container{
+    padding: 20px;
+    
+    
+}
+h2{
+    color: #FF5D5D;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    padding: 20px;
+    line-height: 1.1;
+    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
+}
+.fa-truck-fast{
+  color: skyblue;
+}
+#and{
+  color: gold;
+}
+#logo{
+   margin-left: 14em;
+   border-radius: 16em;
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+p{
+  font-family: 'Lobster', cursive;
+  color: red;
+  font-size: 32px;
+  border: 1px solid forestgreen;
+  padding: 24px;
+  background: #9CFF2E;
+  border-radius: 12px;
+}
+button{
+    margin-top: 20px;
+}
+.mat-mdc-card {
+  width: 100%;
+  align-items: center;
+ 
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 2em;
+}
+#addOrderForm{
+text-align: center;
+/* background-color: #F9D949; */
+background-color: #FFF;
+padding-bottom: 1em;
+}
+#img_head{
+  height: 80.2em;
+}
+.fa-bars{
+  font-size: 25px;
+  padding: 20px;
+  margin-left: 10px;
+}
+.example-sidenav{
+  padding: 9px;
+
+}
+.home{
+  margin-top: 60px;
+}
+.sidebar-item{
+   text-decoration: none;
+  color: #000;
+  margin-left: 14px;
+  font-size: 19px;
+}
+.fa-message{
+  font-size: 20px;
+}
+.fa-phone{
+  font-size: 20px;
+}
+.fa-bell-concierge{
+  font-size: 22px;
+}
+.fa-house{
+  font-size: 20px;
+}
+.fa-burger{
+  color: yellow;
+  font-size: 26px;
+  margin-left: 10px;
+}

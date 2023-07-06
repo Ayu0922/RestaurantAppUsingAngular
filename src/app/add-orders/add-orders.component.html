@@ -1,0 +1,206 @@
+
+<!--  
+<div class="container" id="addNewRestaurant"> -->
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <!-- <div class="logo">
+        <img src="https://img.freepik.com/free-vector/social-media-cover-template-traditional-japanese-restaurant_23-2149532158.jpg?w=826&t=st=1683106825~exp=1683107425~hmac=1d93a5f9cb45b79996a8de42e4a5b209e499fc1c8797ab6199acd9bf20e78ca6" alt="" width="100px">
+      </div> -->
+      <p>Foodies<span><i class="fa-solid fa-burger"></i></span></p>
+      <div class="home">
+        <i class="fa-solid fa-house"></i><span><a matTooltip="Go To Dashboard"  routerLink="/user-dashboard"  class="sidebar-item">Dashboard</a></span>
+      </div><br>
+      <div class="feedback">
+       
+        <i class="fa-solid fa-message"></i><span><a matTooltip="Customer Feedback"  routerLink="/feedback" class="sidebar-item">Customer Feedback</a></span>
+      </div><br>
+      <div class="contacts">
+        <i class="fa-solid fa-phone"></i><span><a   matTooltip="Customer Contacts Records"  id="view_contacts" routerLink="/contact-records-get" class="sidebar-item">View Contacts</a></span>
+      </div><br>
+      <!-- <button mat-raised-button matTooltip="Customer Contacts Records"  routerLink="/contact-records-get" id="view_contacts">View Contacts</button><br> -->
+      <!-- <button mat-raised-button color="warn" matTooltip="View Food Order Records"  routerLink="/view-orders">View Orders</button> -->
+    <div class="order">
+      <i class="fa-solid fa-bell-concierge"></i><span><a  matTooltip="View Food Order Records"  routerLink="/view-orders"  class="sidebar-item">View Orders</a></span>
+    </div>
+
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <!-- <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button> -->
+      <i class="fa-solid fa-bars"  mat-button (click)="drawer.toggle()"></i>
+   
+  <div class="container-fluid" id="addNewRestaurant">
+    <div class="row">
+      <div class="col-md-6" id="headings" style="padding: 0;">
+        <img src="https://images.pexels.com/photos/2454533/pexels-photo-2454533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="" id="img_head">
+        </div>
+        <div class="col-md-6" id="addOrderForm">
+    <!-- <mat-card>
+        <mat-card-content> -->
+    <div>
+        <div>
+           
+            <!-- <img src="https://th.bing.com/th/id/OIP.CAOX53k4N3b8hVchoOZAtQHaHx?pid=ImgDet&w=168&h=177&c=7" alt="" id="logo"> -->
+            <h2>Food Order <span id="and">& </span> Delivery 
+              <!-- <i class="fa-solid fa-truck-fast fa-beat-fade"></i> -->
+            </h2>
+        </div>
+   
+        <div>
+          <mat-form-field appearance="outline" class="form-elements">
+              <mat-label>Food Image</mat-label>
+              <input matInput placeholder="Image Url" [(ngModel)]="allRestaurant.img">
+             </mat-form-field> 
+             </div>
+        
+
+<div>
+  <mat-form-field appearance="outline" class="form-elements">
+      <mat-label>Restaurant Name</mat-label>
+      <input matInput placeholder="Restaurant Name" [(ngModel)]="allRestaurant.name">
+     </mat-form-field> 
+     </div>
+
+     <div>
+      <mat-form-field appearance="outline" class="form-elements">
+          <mat-label>Menu</mat-label>
+          <input matInput placeholder="Special Menu" [(ngModel)]="allRestaurant.menu">
+         </mat-form-field> 
+         </div>
+
+         <div>
+          <mat-form-field appearance="outline" class="form-elements">
+              <mat-label>Price</mat-label>
+              <input matInput placeholder="Enter Price" [(ngModel)]="allRestaurant.price">
+             </mat-form-field> 
+             </div>
+
+             <!-- <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Restaurant Owner</mat-label>
+               <input matInput placeholder="Owner Name" [(ngModel)]="allRestaurant.owner">
+              </mat-form-field> 
+           </div> -->
+         
+           <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Restaurant Mobile</mat-label>
+               <input matInput placeholder="Contact Number" [(ngModel)]="allRestaurant.mobile">
+              </mat-form-field> 
+           </div>
+         
+           <!-- <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Restaurant Email</mat-label>
+               <input matInput placeholder="Email Address" [(ngModel)]="allRestaurant.email">
+              </mat-form-field> 
+           </div> -->
+         
+            <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Restaurant Location</mat-label>
+               <input matInput placeholder="Location" [(ngModel)]="allRestaurant.location">
+              </mat-form-field> 
+           </div>
+                 <div>
+                  
+            <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                <mat-label>Customer Name</mat-label>
+                <input matInput placeholder="Enter Your Name" [(ngModel)]="restaurantOrderRecords.custname" class="form-control" required>
+               </mat-form-field> 
+               </div>
+
+               <div>
+                <mat-form-field appearance="outline"  class="form-elements">
+                 <mat-label>Ordered Time</mat-label>
+                 <input matInput type="time" placeholder="Location" [(ngModel)]="restaurantOrderRecords.time">
+                </mat-form-field> 
+             </div>
+
+               <div>
+                <mat-form-field appearance="fill">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker"  [(ngModel)]="restaurantOrderRecords.date" name="date" #date="ngModel"  >
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+                  <mat-datepicker #picker ></mat-datepicker>
+                </mat-form-field>
+                
+               </div>
+               
+              <!-- <div>
+                <igx-time-picker
+#timePicker
+[(ngModel)]="restaurantOrderRecords.date"
+[mode]="mode"
+[minValue]="'16:00:00'"
+[spinLoop]='false'
+[inputFormat]="format">
+    <label igxLabel>Time</label>
+</igx-time-picker>
+              </div> -->
+               <!-- <div>
+                <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                    <mat-label>Speciality Dish Picture</mat-label>
+                    <input matInput placeholder="Enter Image URL" [(ngModel)]="restaurantOrderRecords.img" class="form-control" required>
+                   </mat-form-field> 
+                   </div> -->
+   
+  
+
+    <!--Select Menu-->
+<!-- <div>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div> -->
+
+
+    <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Customer Mobile</mat-label>
+        <input matInput placeholder="Contact Number" [(ngModel)]="restaurantOrderRecords.custmobile" class="form-control" required>
+       </mat-form-field> 
+    </div>
+
+    <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Customer Email</mat-label>
+        <input matInput placeholder="Email Address" [(ngModel)]="restaurantOrderRecords.custemail" class="form-control" required>
+       </mat-form-field> 
+    </div>
+
+     <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Location" [(ngModel)]="restaurantOrderRecords.custlocation" class="form-control" required>
+       </mat-form-field> 
+    </div>
+
+    <button mat-raised-button color="primary" (click)="orderRecords()" matTooltip="Cash On Delivery !!!!"  >Order Now</button>
+    &nbsp;<button mat-raised-button color="accent" matTooltip="Let's Order More !!"  routerLink="/user-dashboard">Go Home</button>
+
+</div>
+
+
+<!--Form End-->
+<!-- </mat-card-content>
+</mat-card> -->
+</div>
+</div>
+</div>
+<!-- <div>
+  <marquee behavior="scroll" direction="right">
+  <img src="https://imgs.search.brave.com/_j35dr2Qa1dMmFCd_bmq3UBLcCIIxYDmHVVFH1mhSgs/rs:fit:256:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5P/M2RaeERNUERIU1Ny/ay1fUVI1c2dBQUFB/QSZwaWQ9QXBp" alt="CASH ON DELIVERY"></marquee>
+
+</div> -->
+</div>
+  
+</mat-drawer-container>

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Great+Vibes&family=IBM+Plex+Serif:ital,wght@1,700&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&display=swap&family=Tilt+Prism&display=swap');
+.homePage{
+    margin-top: 4em;
+    border: 2px solid #332FD0;
+    padding: 10px;
+    border-radius: 10px;
+   
+    
+
+}
+img{
+    
+   
+    background-repeat: no-repeat;
+}
+h3{
+    color: #332FD0;
+    text-shadow:  3px 3px 2px  hsl(261, 100%, 84%);
+    font-family: 'IBM Plex Serif', serif;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+span{
+    color: deepskyblue;
+    text-shadow:  2px 2px 3px  hsl(198, 92%, 90%);
+}
+.card{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin-top: 5px;
+    border: 1px solid #332FD0;
+    width:580px;
+    padding: 45px;
+    position: absolute;
+    top:10%;
+    left:30%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+}
+button{
+    margin-top: 30px;
+}

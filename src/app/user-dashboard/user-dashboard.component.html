@@ -1,0 +1,205 @@
+<app-header></app-header>
+<mat-grid-list cols="12" cols-sm="4"  rowheight="1:1" gutter-gt-md="16px" gutter-sm="2px" gutter="2px">
+ 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6" id="headings">
+      <p id="title">Restaurants in your pocket</p>
+        <p id="subtitle">Order from your favorite restaurants & track on the go, with the all-new Restaurants app.</p>
+        <!-- <h4>{{location?.region}}</h4> -->
+       <div>
+       
+        <app-google-map></app-google-map>
+       </div>
+
+    </div>
+    <div class="col-md-6" style="padding: 0;">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=481&q=80" class="d-block w-100" alt="" id="img_head">
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-light justify-content-end">
+    <marquee behavior="scroll" direction="left"><h1 class="text-center">WELCOME TO USER DASHBOARD</h1></marquee>
+    <div class="container">
+        
+    <!-- <form class="d-flex col-md-6">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"  [(ngModel)]="searchTerm" (keyup)="search($event)">
+    </form> -->
+    <button mat-raised-button color="warn" matTooltip="Customer Feedback"  routerLink="/feedback" id="btn-feedback">Customer Feedback</button>
+    
+  </div>
+  </nav>
+  <!-- <mat-grid-list cols="12" rowHeight="1:1"> -->
+  <div class="container-fluid allRestaurant">
+    
+  <!-- <table mat-table [dataSource]="allRestaurants|filter:searchText|paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
+   
+    <!-- <table mat-table [dataSource]="allRestaurants|filter:searchText| orderBy:key:reverse |paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
+    <table mat-table [dataSource]="allRestaurants| paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8">
+     
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef (click)="sort('id')">Sr.No.&nbsp;<i class="fa fa-sort"></i></th>
+      
+        <td mat-cell *matCellDef="let element "> {{element.id}} </td>
+      </ng-container>
+       <!-- Image Column -->
+      <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef> Speciality Dishes</th>
+      
+        <td mat-cell *matCellDef="let element "><img src="{{element.img}}" alt="">  </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Restaurant Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Menu Column -->
+      <ng-container matColumnDef="menu">
+        <th mat-header-cell *matHeaderCellDef> Menu</th>
+        <td mat-cell *matCellDef="let element"> {{element.menu}} </td>
+      </ng-container>
+
+     <!-- Price Column -->
+     <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}}&#x20b9;  </td>
+    </ng-container>
+  
+      <!-- Mobile Column -->
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Mobile  </th>
+        <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+      </ng-container>
+  
+      
+      
+        <!-- Location Column -->
+        <ng-container matColumnDef="location">
+          <th mat-header-cell *matHeaderCellDef> Location </th>
+          <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+        </ng-container>
+  
+          <!-- Action Column -->
+          <ng-container matColumnDef="order now">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button color="warn" matTooltip="Order Now !!!"  [routerLink]="['/add-order',element.id]"  fragment="getOrderYourFood">Order</button>
+            </td>
+          </ng-container>
+       
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     
+    </table>
+    
+ 
+   
+  </div>
+  
+  <div class="d-flex flex-row-reverse pagenator ">
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    <pagination-controls (pageChange)="paginator($event)"></pagination-controls>
+  </div>
+<!-- </mat-grid-list> -->
+<!--cash on delivery img-->
+<div>
+  <marquee behavior="scroll" direction="right">
+  <img src="https://imgs.search.brave.com/_j35dr2Qa1dMmFCd_bmq3UBLcCIIxYDmHVVFH1mhSgs/rs:fit:256:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5P/M2RaeERNUERIU1Ny/ay1fUVI1c2dBQUFB/QSZwaWQ9QXBp" alt="CASH ON DELIVERY"></marquee>
+
+</div>
+  <!--Footer Start-->
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-3">
+        <div class=" justify-content-start">
+          <ul>
+            <li>Service</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Help & Support</li>
+          </ul>
+         
+        </div>
+      </div>
+      
+  
+  
+      <!--Contact Us -->
+      <div class="col-md-4 forms">
+        <div> <p class="cont">Contact Us</p></div>
+        <div>
+          <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enter Your Name" [(ngModel)]="contactUsRecords.name" class="form-control" type="text" required>
+             </mat-form-field> 
+             </div>
+  
+             <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Mobile</mat-label>
+               <input matInput placeholder="Contact Number" [(ngModel)]="contactUsRecords.mobile" class="form-control"  type="text" maxlength="10" minlength="10" required>
+              </mat-form-field> 
+           </div>
+       
+           <div>
+              <mat-form-field appearance="outline" class="form-elements">
+               <mat-label>Email</mat-label>
+               <input matInput placeholder="Email Address" [(ngModel)]="contactUsRecords.email" class="form-control" type="email" required>
+              </mat-form-field> 
+           </div>
+           <button mat-raised-button color="primary" (click)="contactUs()">Submit</button>&nbsp;
+           <button mat-raised-button color="warn" (click)="resetForm()">Reset</button>
+      </div>
+      <!--Close Container Contact Us -->
+        <div class="col-md-4 ">
+          <div class="row mailus">
+            <div class=" justify-content-start">
+            
+                <div class="mail">
+                    <span>Address</span></div>
+               
+            <div class="mat-typography">
+            <p>My Restaurant Application Private Limited, </p>
+            <p> Buildings Alyssa, Begonia &amp; </p>
+            <p> Clove Embassy Tech Village, </p>
+            <p> Outer Ring Road, Devarabeesanahalli Village, </p>
+            <p> Bengaluru, 560103, </p>
+            <p> Karnataka, India</p>
+            </div>
+            
+           
+             
+            </div>
+           </div>
+         <div class="row logo">
+          <div class="d-flex flex-row  justify-content-start">
+          <h2>Follow Us</h2>
+            <div  class="p-3 facebook"><i class="fa-brands fa-facebook" ></i></div>
+            <div  class="p-3 instagram"><i class="fa-brands fa-instagram"></i></div>
+            <div  class="p-3 linkedin"><i class="fa-brands fa-linkedin"></i></div>
+            </div>
+            </div>
+        </div>
+    
+    </div>
+   <div class="row justify-content-center" id="subfooter">
+
+    <div> <h3>Copyright 2023 &copy;Created By Ayurvedi</h3></div>
+   </div>
+    
+   
+      </div>
+  
+      <!--Scroll Top-->
+    <div class="scroll-to-top" >
+      <button type="button" class="btn active" data-toggle="button" aria-pressed="true" (click)="scrollToTop()">
+        <!-- <i class="fa-solid fa-jet-fighter-up"></i> -->
+        <img src="https://imgs.search.brave.com/ZJsH-4YnT919NWOT4TNPXdia2S5TMQTpDyc54BtMc2Q/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/cEdkRUdvVl9ZSy1O/OHhJRFJSTWNnSGFI/YSZwaWQ9QXBp" alt="" class="scroll-top-img" >
+      </button>
+    </div>
+  
+    </mat-grid-list>

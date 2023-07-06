@@ -1,0 +1,255 @@
+
+<app-header></app-header>
+<!--tabs-->
+<!-- <div class="container-fluid">
+  <mat-tab-group>
+    <mat-tab label="First"> <img src="https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="food_image1" id="img1" class="tab_images"> </mat-tab>
+    <mat-tab label="Second"> <img src="https://burst.shopifycdn.com/photos/hotel-breakfast-room-service.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="food_image2" id="img2"  class="tab_images"> </mat-tab>
+    <mat-tab label="Third"> <img src="https://burst.shopifycdn.com/photos/berries-granola.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="food_image3" id="img3"  class="tab_images"> </mat-tab>
+  </mat-tab-group>
+  
+</div> -->
+
+<!--Carouls-->
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=925&format=pjpg&exif=1&iptc=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://burst.shopifycdn.com/photos/hotel-breakfast-room-service.jpg?width=925&format=pjpg&exif=1&iptc=1" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://burst.shopifycdn.com/photos/berries-granola.jpg?width=925&format=pjpg&exif=1&iptc=1" class="d-block w-100" alt="...">
+      </div>
+      <!-- <div class="carousel-item">
+        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq" class="d-block w-100" alt="">
+      </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!--Search, Add & View Contacts-->
+<nav class="navbar navbar-light justify-content-end">
+  <div class="container">
+     <!--Search Bar-->
+  <!-- <form class="d-flex">
+   
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="searchText">
+    
+  </form> -->
+  <!--Add Restaurant Button-->
+  <!-- <button mat-raised-button color="warn" matTooltip="Customer Feedback"  routerLink="/feedback" >Customer Feedback</button> -->
+  &nbsp;&nbsp;<button mat-raised-button color="primary" matTooltip="Add New Restaurant"  routerLink="/add-restaurant" fragment="addNewRestaurant" [queryParams]="{getRestaurant:true}">+ Add Restaurant </button>
+ <!-- &nbsp;&nbsp; <button mat-raised-button color="accent" matTooltip="View Contact Records"  routerLink="/contact-records-get" fragment="viewContactRecods" [queryParams]="{getContacts:true}">View Contacts</button>
+ &nbsp;&nbsp; <button mat-raised-button color="warn" matTooltip="View Food Order Records"  routerLink="/view-orders">View Orders</button>
+   -->
+</div>
+</nav>
+<!--Display Added Restaurants in Table Format-->
+<div class="container-fluid allRestaurant">
+  
+<!-- <table mat-table [dataSource]="allRestaurants|filter:searchText|paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
+ 
+  <!-- <table mat-table [dataSource]="allRestaurants|filter:searchText| orderBy:key:reverse |paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
+  <table mat-table [dataSource]="allRestaurants |paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8">
+   
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('id')">Sr.No.&nbsp;<i class="fa fa-sort"></i></th>
+    
+      <td mat-cell *matCellDef="let element "> {{element.id}} </td>
+    </ng-container>
+     <!-- Image Column -->
+    <ng-container matColumnDef="img">
+      <th mat-header-cell *matHeaderCellDef> Image</th>
+    
+      <td mat-cell *matCellDef="let element "><img src="{{element.img}}" alt="">  </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Restaurant Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Menu Column -->
+    <ng-container matColumnDef="menu">
+      <th mat-header-cell *matHeaderCellDef> Menu </th>
+      <td mat-cell *matCellDef="let element"> {{element.menu}} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}}&#x20b9; </td>
+    </ng-container>
+    <!-- Owner Column -->
+    <ng-container matColumnDef="owner">
+      <th mat-header-cell *matHeaderCellDef> Owner </th>
+      <td mat-cell *matCellDef="let element"> {{element.owner}} </td>
+    </ng-container>
+  
+    <!-- Mobile Column -->
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef> Mobile  </th>
+      <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+    </ng-container>
+
+     <!-- Email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+    
+      <!-- Location Column -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> Location </th>
+        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> 
+        <a [routerLink]="['/edit',element.id,p]" [queryParams]="{editMode:true,p}" fragment="updateRecord"> 
+          <mat-icon aria-hidden="false" aria-label="Example edit icon" fontIcon="edit"  matTooltip="Update Record"></mat-icon>
+        </a>
+
+        <!-- <a [routerLink]="['/view']" [queryParams]="{viewMode:true}" fragment="updateRecord"> 
+          <mat-icon aria-hidden="false" aria-label="Example eye icon" fontIcon="home"  matTooltip="View Shop" style="color:green;margin-left: 5px;font-size: 1.8em;"></mat-icon>
+        </a>  -->
+          <mat-icon aria-hidden="false" aria-label="Example delete icon" fontIcon="delete" (click)="deleteRecord(element.id)" style="color:red" matTooltip="Delete Record"></mat-icon>
+        </td>
+      </ng-container>
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   
+  </table>
+  
+  <!-- <mat-paginator [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]></mat-paginator> -->
+ 
+</div>
+<!--Adding Paginator-->
+<div class="d-flex flex-row-reverse pagenator " >
+  <pagination-controls (pageChange)="paginator($event)"></pagination-controls>
+</div>
+<!--Footer Starts-->
+<div class="footer">
+  <div class="row">
+    <div class="col">
+      <div class=" justify-content-start">
+        <ul>
+          <li>Service</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Help & Support</li>
+        </ul>
+        <div> <h3>Copyright 2023 &copy;Created By Ayurvedi</h3></div>
+      </div>
+    </div>
+    <!-- <div class="col-md-3 gif">
+      <img src="https://imgs.search.brave.com/1F1y6XvEr70D3UiloKuoWXXtchBkAegeKMlrSCTVJJs/rs:fit:468:650:1/g:ce/aHR0cDovLzEuYnAu/YmxvZ3Nwb3QuY29t/Ly1KNGNTdlVGTHFh/MC9VUkVJWm9tY0V3/SS9BQUFBQUFBQUFT/VS9sb0hSYWU3Wl84/by9zMTYwMC9iYWtl/ci13aGlzazAxLmdp/Zg.gif" alt="">
+    </div> -->
+
+
+    <!--Contact Us -->
+    <div class="col-md-4 forms">
+      <div> <h1>Contact Us</h1></div>
+      <div>
+        <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Your Name" [(ngModel)]="contactUsRecords.name" class="form-control" type="text" required>
+           </mat-form-field> 
+           </div>
+
+           <div>
+            <mat-form-field appearance="outline" class="form-elements">
+             <mat-label>Mobile</mat-label>
+             <input matInput placeholder="Contact Number" [(ngModel)]="contactUsRecords.mobile" class="form-control"  type="number" required>
+            </mat-form-field> 
+         </div>
+     
+         <div>
+            <mat-form-field appearance="outline" class="form-elements">
+             <mat-label>Email</mat-label>
+             <input matInput placeholder="Email Address" [(ngModel)]="contactUsRecords.email" class="form-control" type="email" required>
+            </mat-form-field> 
+         </div>
+         <button mat-raised-button color="primary" (click)="contactUs()">Submit</button>&nbsp;
+         <button mat-raised-button color="warn" (click)="resetForm()">Reset</button>
+    </div>
+    <!--Close Container Contact Us -->
+      <div class="col-md-4 ">
+       <div class="row mailus">
+        <div class=" justify-content-start">
+        
+            <div class="mail">
+                <span>Address</span></div>
+           
+        <div class="mat-typography">
+        <p>My Restaurant Application Private Limited, </p>
+        <p> Buildings Alyssa, Begonia &amp; </p>
+        <p> Clove Embassy Tech Village, </p>
+        <p> Outer Ring Road, Devarabeesanahalli Village, </p>
+        <p> Bengaluru, 560103, </p>
+        <p> Karnataka, India</p>
+        </div>
+        
+       
+         
+        </div>
+       </div>
+
+<div class="row logo">
+  
+        <div class="d-flex flex-row  justify-content-start ">
+        <h2>Follow Us</h2>
+          <div  class="p-3 facebook"><i class="fa-brands fa-facebook" ></i></div>
+          <div  class="p-3 instagram"><i class="fa-brands fa-instagram"></i></div>
+          <div  class="p-3 linkedin"><i class="fa-brands fa-linkedin"></i></div>
+          
+          </div>
+        </div>
+
+
+      </div>
+  
+  </div>
+ 
+  
+ 
+    </div>
+    <!--Scroll Top-->
+    <div class="scroll-to-top" >
+      <a type="a" class="btn active" data-toggle="a" aria-pressed="true" (click)="scrollToTop()">
+        <!-- <i class="fa-solid fa-jet-fighter-up"></i> -->
+        <img src="https://imgs.search.brave.com/ZJsH-4YnT919NWOT4TNPXdia2S5TMQTpDyc54BtMc2Q/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/cEdkRUdvVl9ZSy1O/OHhJRFJSTWNnSGFI/YSZwaWQ9QXBp" alt="" class="scroll-top-img" >
+      </a>
+    </div>
+  
+  
+    
+  
+
+  
+  
+  
+ 
+
+   
+  

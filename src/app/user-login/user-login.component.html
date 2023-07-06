@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h3>
+                      <span> <i class="fa-solid fa-user"></i></span>  USER LOGIN</h3>
+                      
+                     
+                </div>
+                <form  [formGroup]="loginForm" (ngSubmit)="logIn()">
+                    <div class="mb-3">
+                      <label class="form-label">Username</label>
+                      <input  formControlName="uname" type="text" class="form-control" id="uname" aria-describedby="emailHelp" placeholder="Enter Username user">
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Password</label>
+                      <input formControlName="password" [type]="changetype?'password':'text'" class="form-control" id="password" placeholder="Enter Password 12345" >
+                   <span class="eye-icon" (click)="viewpass()"><i [ngClass]="visible?'fa-solid fa-eye' :'fa-solid fa-eye-slash'"></i></span>
+                   
+                  </div>
+                  
+                    <div class="d-grid col-6 mx-auto">
+                    <button type="submit" class="btn btn-success " matTooltip="Login Now !!!" [disabled]="loginForm.invalid">Login</button>
+                </div> 
+                <!-- <p class="message">Not registered? <a routerLink="/signup">Create an account</a></p>  -->
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+

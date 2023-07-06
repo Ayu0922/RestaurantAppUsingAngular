@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Barlow&family=Barlow+Semi+Condensed&family=Lobster&family=Phudu&family=Playfair+Display:ital,wght@1,400;1,700&family=Poppins&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto+Slab:wght@100;200;300;700&family=Slabo+27px&display=swap');
+
+h3{
+    color: deepskyblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 29px;
+    text-shadow:3px 2px 3px gray;
+}
+
+.card{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin-top: 110px;
+    border: 1px solid deepskyblue;
+    width:550px;
+    padding: 45px;
+    position: absolute;
+    top:5%;
+    left:30%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+}
+.eye-icon{
+  position: absolute;
+    right: 4.5em;
+    top: 14.7em;
+    color: gray;
+}
+
+.fa-mug-hot{
+  color:brown;
+}

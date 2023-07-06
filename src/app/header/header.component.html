@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Restaurant App</span>
+    <span class="example-spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+    <!-- <button type="button" class="btn btn-warning"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Customer Contacts Records" routerLink="/contact-records-get">View Contacts</button> -->
+   
+  </mat-toolbar>
+
+  <mat-toolbar id="btn-nav">
+    
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary" matTooltip="View Customer Feedback"  routerLink="/cust-view" >View Feedback</button>
+    &nbsp;<button mat-raised-button matTooltip="Customer Contacts Records"  routerLink="/contact-records-get" id="view_contacts">View Contacts</button>
+    &nbsp; <button mat-raised-button color="warn" matTooltip="View Food Order Records"  routerLink="/view-orders">View Orders</button>
+  
+
+  </mat-toolbar>
+  <mat-toolbar id="btn-nav">
+    <button mat-raised-button matTooltip="Admin" routerLink="/dashboard">Admin Dashboard</button>
+    &nbsp;<button mat-raised-button color="accent" matTooltip="User Dashboard" routerLink="/user-dashboard">User Dashboard</button>
+    &nbsp; <button mat-raised-button  color="warn" matTooltip="Logout Now"  (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>

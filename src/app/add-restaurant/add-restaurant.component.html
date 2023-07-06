@@ -1,0 +1,85 @@
+<!-- <div class="container" id="addNewRestaurant"> -->
+    <div class="container-fluid" id="addNewRestaurant">
+        <div class="row">
+          <div class="col-md-6" id="headings" style="padding: 0;">
+            <img src="https://images.pexels.com/photos/12276391/pexels-photo-12276391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="" id="img_head">
+            </div>
+            <div class="col-md-6" id="addOrderForm">
+    <!-- <mat-card>
+        <mat-card-content> -->
+    <div>
+        <div>
+           
+            <!-- <img src="https://th.bing.com/th/id/OIP.CAOX53k4N3b8hVchoOZAtQHaHx?pid=ImgDet&w=168&h=177&c=7" alt=""> -->
+            <h2>Add New Restaurant Details</h2>
+        </div>
+   
+                 <!--Restaurant Name-->
+                 <div>
+                  <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                <mat-label>Restaurant Name</mat-label>
+                <input matInput placeholder="Restaurant Name" [(ngModel)]="restaurantRecords.name" class="form-control" required>
+               </mat-form-field> 
+               </div>
+               <!--Restaurant Menu-->
+               <div>
+                   <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                    <mat-label>Restaurant Spec. Menu</mat-label>
+                    <input matInput placeholder="Restaurant Spec. Menu" [(ngModel)]="restaurantRecords.menu" class="form-control" required>
+                   </mat-form-field> 
+                   </div>
+                <!--Restaurant Price-->
+                   <div>
+                    <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                     <mat-label> Price</mat-label>
+                     <input matInput placeholder="Menu Price" [(ngModel)]="restaurantRecords.price" class="form-control" required>
+                    </mat-form-field> 
+                    </div>
+
+                   <!--Restaurant Dish Pic-->
+               <div>
+                   <mat-form-field appearance="outline" class="form-elements needs-validation" novalidate>
+                    <mat-label>Speciality Dish Picture</mat-label>
+                    <input matInput placeholder="Enter Image URL" [(ngModel)]="restaurantRecords.img" class="form-control" required>
+                   </mat-form-field> 
+                   </div>
+   <!--Restaurant Owner-->
+       <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Restaurant Owner</mat-label>
+        <input matInput placeholder="Owner Name" [(ngModel)]="restaurantRecords.owner" class="form-control" required>
+       </mat-form-field> 
+    </div>
+<!--Restaurant Mobile-->
+    <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Restaurant Mobile</mat-label>
+        <input matInput placeholder="Contact Number" [(ngModel)]="restaurantRecords.mobile" class="form-control" required>
+       </mat-form-field> 
+    </div>
+<!--Restaurant Email-->
+    <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Restaurant Email</mat-label>
+        <input matInput placeholder="Email Address" [(ngModel)]="restaurantRecords.email" class="form-control" required>
+       </mat-form-field> 
+    </div>
+<!--Restaurant Location-->
+     <div>
+       <mat-form-field appearance="outline" class="form-elements">
+        <mat-label>Restaurant Location</mat-label>
+        <input matInput placeholder="Location" [(ngModel)]="restaurantRecords.location" class="form-control" required>
+       </mat-form-field> 
+    </div>
+
+    <button mat-raised-button color="primary" (click)="addRecords()" matTooltip="Add New Restaurant" [(ngModel)]="restaurantRecords" [matTooltipPosition]="position.value!">ADD RECORD</button>
+  &nbsp; <button mat-raised-button color="accent" matTooltip="Go Home" routerLink="/dashboard">Home</button>
+</div>
+
+
+<!--Form End-->
+<!-- </mat-card-content>
+</mat-card> -->
+</div>
+</div>
+</div>
