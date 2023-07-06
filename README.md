@@ -1,3 +1,5 @@
+# JSON API
+On Command line run this command `json-server --watch resto.json`
 # RestaurantApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
