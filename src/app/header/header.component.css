@@ -13,3 +13,38 @@
     padding-left: 0;
     padding-right: 0;
   }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    right: 6%;
+    font-size: 30px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: navy;
+    min-width: 155px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    border-radius: 5px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 1px 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;border-radius: 2px;}
+  
+  .dropdown:hover .dropdown-content {
+  
+    display: block;
+    left: -106%;
+    font-size: 15px;
+  }
+  
+  /* .dropdown:hover .fa-circle-user {background-color: #3e8e41;} */

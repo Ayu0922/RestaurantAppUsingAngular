@@ -48,7 +48,7 @@ td{
   width: 10px;
 }
 .p-3{
-  color:#fff;
+  color:coral;
   font-size: 36px;
    
 }
@@ -84,8 +84,8 @@ td{
 h3{
     /* new codee */
    
- 
-    color: #D8D9CF;
+    color: coral;
+    text-shadow: 2px 2px 3px;
     font-size: 15px;
     margin-top: 11em;
     padding: 1px;
@@ -94,7 +94,7 @@ h3{
  
 }
 h2{
-  color: #fff;
+  color: coral;
   font-size: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  text-align: center;
@@ -207,7 +207,7 @@ p {
 .mail{
   font-size: 28px;
     margin-bottom: 9px;
-    color: cornsilk;
+    color: coral;
     font-family: 'Slabo 27px', serif;
 }
 /* copyright */
