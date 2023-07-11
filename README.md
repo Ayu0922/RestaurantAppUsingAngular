@@ -27,3 +27,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Snapshots 
+Admin Pannel
+
+![image](https://github.com/Ayu0922/RestaurantAppUsingAngular/assets/85955380/f1838326-3521-408a-9310-447225f6d76c)
+
+You Can Perform CRUD Here.
+
+![image](https://github.com/Ayu0922/RestaurantAppUsingAngular/assets/85955380/0a041be1-66ca-44e8-ba73-3719130f2aa3)
+
+User Pannel
+
+![image](https://github.com/Ayu0922/RestaurantAppUsingAngular/assets/85955380/26c71d29-9f6d-4cf9-bd44-bc1ef63c6823)
+
+Order food & Give Customer Feedback
+
+![image](https://github.com/Ayu0922/RestaurantAppUsingAngular/assets/85955380/910a9b59-e0e5-430b-a5ff-305925db98ca)
+
+
+Footer
+
+![image](https://github.com/Ayu0922/RestaurantAppUsingAngular/assets/85955380/aa294d9e-7600-4edd-93e9-cf30d854741f)
+
+
+
+
+
+
+
+
