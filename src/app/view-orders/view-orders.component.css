@@ -30,8 +30,8 @@ th{
 }
 
 table img{
-
-    width: 212px;
+     height: 200px;
+    width: 200px;
     -webkit-transform: scale(1);
       transform: scale(1);
       -webkit-transition: .3s ease-in-out;
