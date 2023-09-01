@@ -91,7 +91,7 @@ contactUsRecords:Contact={
 
     // Change the name of the button.
     if(this.show)  
-      this.buttonName = "Check Menu";
+      this.buttonName = "Close Menu";
     else
       this.buttonName = "Show Menu";
   }
