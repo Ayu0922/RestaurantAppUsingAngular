@@ -19,18 +19,57 @@
   </div>
 </div>
 <nav class="navbar navbar-light justify-content-end">
-    <marquee behavior="scroll" direction="left"><h1 class="text-center">WELCOME TO USER DASHBOARD</h1></marquee>
+    <marquee behavior="scroll" direction="left"><h1 class="text-center">WELCOME TO USER DASHBOARD <span><img src="assets/media/pizza-delivery.gif" width="100px"></span></h1> 
+    </marquee>
     <div class="container">
         
     <!-- <form class="d-flex col-md-6">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"  [(ngModel)]="searchTerm" (keyup)="search($event)">
     </form> -->
-    <button mat-raised-button color="warn" matTooltip="Customer Feedback"  routerLink="/feedback" id="btn-feedback">Customer Feedback</button>
+    <button mat-raised-button  matTooltip="Customer Feedback"  routerLink="/feedback" id="btn-feedback">Customer Feedback  <span><img src="assets/media/thumb-up.png" width="30px"></span>
+    </button>
     
   </div>
   </nav>
+  <div class="container-fluid mt-2 p-6">
+<div class="row">
+  <div class="col-md-4 banner">
+    <h2 id="banner">No Minimum Order</h2>
+   <span class="d-flex justify-content-center"><img src="assets/media/food-container.gif" width="200px"></span>
+    <p>Order in for yourself or for the group, with no restrictions on order value</p>
+  </div>
+  <div class="col-md-4 banner">
+    <h2 id="banner">Live Order Tracking</h2>
+   <span class="d-flex justify-content-center"><img src="assets/media/map-and-location.gif" width="200px"></span>
+    <p>Know where your order is at all times, from the restaurant to your doorstep</p>
+  </div>
+  <div class="col-md-4 banner">
+    <h2 id="banner">Lightning-Fast Delivery</h2>
+    <span class="d-flex justify-content-center"><img src="assets/media/delivery-truck.gif" width="200px"></span>
+    <p>Experience superfast delivery for food delivered fresh & on time</p>
+  </div>
+</div>
+  </div>
   <!-- <mat-grid-list cols="12" rowHeight="1:1"> -->
-  <div class="container-fluid allRestaurant">
+    <div class="container-fluid">
+
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-center">
+    <span><img src="assets/media/menu.gif" width="300px"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="d-flex justify-content-center mb-10">
+    <button mat-raised-button color="warn" matTooltip="Show Menu" (click)="toggle()">{{buttonName}} <span><img src="assets/media/tongue.png" width="30px" style="padding: 5px;"></span>
+    </button>
+  </div>
+</div>
+      
+    </div>
+    
+    <ng-container *ngIf="show">
+  <div class="container-fluid allRestaurant" ng-model="menu">
     
   <!-- <table mat-table [dataSource]="allRestaurants|filter:searchText|paginate:{itemsPerPage:5,currentPage:p} " class="mat-elevation-z8"> -->
    
@@ -86,7 +125,7 @@
           <ng-container matColumnDef="order now">
             <th mat-header-cell *matHeaderCellDef> Action </th>
             <td mat-cell *matCellDef="let element"> 
-              <button mat-raised-button color="warn" matTooltip="Order Now !!!"  [routerLink]="['/add-order',element.id]"  fragment="getOrderYourFood">Order</button>
+              <button mat-raised-button matTooltip="Order Now !!!"  [routerLink]="['/add-order',element.id]"  fragment="getOrderYourFood">Order <img src="assets/media/order-food.png" id="order-food-img"></button>
             </td>
           </ng-container>
        
@@ -99,15 +138,18 @@
    
   </div>
   
-  <div class="d-flex flex-row-reverse pagenator ">
+  <div class="d-flex flex-row-reverse pagenator " ng-model="menu">
     <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
     <pagination-controls (pageChange)="paginator($event)"></pagination-controls>
   </div>
+</ng-container>
 <!-- </mat-grid-list> -->
 <!--cash on delivery img-->
 <div>
-  <marquee behavior="scroll" direction="right">
-  <img src="https://imgs.search.brave.com/_j35dr2Qa1dMmFCd_bmq3UBLcCIIxYDmHVVFH1mhSgs/rs:fit:256:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5P/M2RaeERNUERIU1Ny/ay1fUVI1c2dBQUFB/QSZwaWQ9QXBp" alt="CASH ON DELIVERY"></marquee>
+  <marquee behavior="scroll" direction="right" scrollamount="12">
+    <span><img src="assets/media/scooter.gif" width="200px" style="margin-top: 1em;"></span>
+
+</marquee>
 
 </div>
   <!--Footer Start-->

@@ -136,10 +136,10 @@ h1{
     margin-right: 15em;
     font-size: 44px;
     margin-top: 10px;
-    /* color:#7149C6; */
-    color: #62CDFF;
-    text-shadow: 3px 2px 3px #C9EEFF;
+    color: orange;
+    text-shadow: 3px 2px 3px #FFD93D;;
 }
+
 #headings{
   background-color: orange;
   color: #000000;
@@ -227,4 +227,23 @@ p {
 }
 #btn-feedback{
   width:20em;
+}
+#order-food-img{
+  height: 40px;
+  width: 40px;
+}
+#banner{
+  font-size: 27px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: coral;
+}
+
+.banner p{
+  color: gray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin: 15px;
+  font-size: 19px;
+  font-weight: 500;
 }

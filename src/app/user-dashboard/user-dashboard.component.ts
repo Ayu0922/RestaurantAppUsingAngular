@@ -21,6 +21,8 @@ export interface Order {
 })
 export class UserDashboardComponent implements OnInit {
   //to get location
+  public show:boolean = false;
+  public buttonName:any = 'Show Menu';
   location:any
   filterCategory:any;
   //for searchbar
@@ -83,6 +85,15 @@ contactUsRecords:Contact={
       block: 'start',
       inline: 'start'
     });
+  }
+  toggle() {
+    this.show = !this.show;
+
+    // Change the name of the button.
+    if(this.show)  
+      this.buttonName = "Check Menu";
+    else
+      this.buttonName = "Show Menu";
   }
    getAllRestaurantOrders(){
      this.restaurant.getAll().subscribe((data)=>{
